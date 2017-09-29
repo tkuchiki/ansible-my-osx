@@ -1,0 +1,7 @@
+---
+app_name: Jasper
+app_url: https://github.com/jasperapp/jasper/releases/download/v0.4.0/jasper_v0.4.0_mac.zip
+zip_name: jasper_v0.4.0_mac.zip
+installer_type: app
+install_method: zip
+mount_path: /Volumes/Jasper

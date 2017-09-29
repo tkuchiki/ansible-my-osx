@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  connection: local
+      
+  tasks:
+    - include_vars: vars.yml
+    
+    - name: verify signed in to mas
+      shell: mas account
+      register: mas_is_signed_in
+      failed_when: mas_is_signed_in.rc > 1
+      changed_when: false
+
+    - name: sign in to mas
+      shell: mas signin --dialog "{{ mas_email }}"
+      register: mas_signin
+      when: mas_is_signed_in.rc != 0
+
+    - name: "install Mac App Store"
+      shell: mas install "{{ item.id }}"
+      register: install_mas
+      with_items: "{{ mas_apps }}"
+      when: mas_is_signed_in.rc == 0 or mas_signin.rc == 0

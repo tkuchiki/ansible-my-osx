@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  connection: local
+      
+  tasks:
+    - include_vars: vars.yml
+    
+    - name: "udpate homebrew"
+      homebrew:
+        update_homebrew: yes
+
+    - name: "homebrew tap"
+      homebrew_tap:
+        name: '{{ item }}'
+        state: present
+      with_items: '{{ homebrew_taps }}'
+
+    - name: "install homebrew packages"
+      homebrew:
+        name: '{{ item.name }}'
+        state: '{{ item.state | default("present") }}'
+        install_options: '{{ item.install_options | default("")}}'
+      with_items: '{{ homebrew_packages }}'

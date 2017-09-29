@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  connection: local
+  become: yes
+
+  tasks:
+    - include_vars: vars.yml
+    - include_tasks: setup.yml
+    #- include_tasks: google_chrome/main.yml
+    #- include_tasks: docker/main.yml
+    - include_tasks: jasper/main.yml

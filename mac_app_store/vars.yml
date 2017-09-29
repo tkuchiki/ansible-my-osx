@@ -1,0 +1,12 @@
+mas_email: your@email.addr
+mas_apps:
+  - { id: 497799835, name: "XCode" }
+  - { id: 467939042, name: "Growl" }
+  - { id: 409183694, name: "Keynote" }
+  - { id: 405399194, name: "Kindle" }
+  - { id: 539883307, name: "LINE" }
+  - { id: 430252530, name: "MailTab Pro for Gmail" }
+  - { id: 715768417, name: "Microsoft Remote Desktop" }
+  - { id: 451104825, name: "Tree" }
+  - { id: 410628904, name: "Wunderlist" }
+  - { id: 428834068, name: "YoruFukurou" }

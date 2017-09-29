@@ -1,0 +1,4 @@
+---
+- include_vars: vars.yml
+- name: Create Ansible downloads directory
+  file: path={{downloads}} state=directory

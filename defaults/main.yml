@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  connection: local
+      
+  tasks:
+    - include_vars: vars.yml
+    
+    - name: Set KeyRepeat = "{{KeyRepeat}}"
+      osx_defaults:
+        domain: NSGlobalDomain
+        key: KeyRepeat
+        type: int
+        value: "{{KeyRepeat}}"
+    
+    - name: Set InitialKeyRepeat = "{{InitialKeyRepeat}}"
+      osx_defaults:
+        domain: NSGlobalDomain
+        key: InitialKeyRepeat
+        type: int
+        value: "{{InitialKeyRepeat}}"
+

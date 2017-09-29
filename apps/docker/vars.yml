@@ -1,0 +1,6 @@
+---
+app_name: Docker
+app_url: https://download.docker.com/mac/stable/Docker.dmg
+installer_type: app
+install_method: dmg
+mount_path: /Volumes/Docker
